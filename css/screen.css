@@ -21,6 +21,8 @@ html {
     font-family: 'droid-serif', Georgia, serif;
     color: #5c6366;
     padding: 48px 24px 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -58,8 +60,15 @@ img {
     Default markup for typographic elements
 */
 
+h1,
+h2,
+h3 {
+    color:#17181A;
+    font-family: 'Inter Web', Arial, Helvetica, sans-serif;
+}
+
 h1 {
-    font-family: serif;
+    font-family: 'Playfair Display', serif;
     font-size: 36px;
     font-weight: normal;
     line-height: 40px;
@@ -146,12 +155,6 @@ a:active {
 a:hover,
 a:focus {
     color: #00E6A1;
-}
-
-h1,
-h2,
-h3 {
-    color:#17181A;
 }
 
 /* Small devices (landscape phones, 576px and up) */
