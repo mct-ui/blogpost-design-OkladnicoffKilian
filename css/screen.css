@@ -1,9 +1,10 @@
-@font-face{
+@font-face {
     font-family: 'Inter Web';
     font-weight: 400;
     src: url('../fonts/Inter-Regular.woff2') format('woff2');
 }
-@font-face{
+
+@font-face {
     font-family: 'Inter Web';
     font-weight: 700;
     src: url('../fonts/Inter-Bold.woff2') format('woff2');
@@ -20,14 +21,19 @@ html {
     line-height: 1.5;
     font-family: 'droid-serif', Georgia, serif;
     color: #5c6366;
-    padding: 48px 24px 24px;
+    /* padding: 48px 24px 24px; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
 }
 
 body {
-    max-width: 42em;
-    margin: 0 auto;
+    /* max-width: 42em; */
+    /* margin: 0 auto; */
 }
 
 /*
@@ -60,10 +66,8 @@ img {
     Default markup for typographic elements
 */
 
-h1,
-h2,
-h3 {
-    color:#17181A;
+h1, h2, h3 {
+    color: #17181A;
     font-family: 'Inter Web', Arial, Helvetica, sans-serif;
 }
 
@@ -91,31 +95,21 @@ h3 {
     margin: 0 0 24px;
 }
 
-h4,
-h5,
-h6 {
+h4, h5, h6 {
     font-size: 16px;
     line-height: 24px;
     margin: 0 0 24px;
 }
 
-p,
-ol,
-ul,
-dl,
-table,
-address,
-figure {
+p, ol, ul, dl, table, address, figure {
     margin: 0 0 24px;
 }
 
-ul,
-ol {
+ul, ol {
     padding-left: 24px;
 }
 
-li ul,
-li ol {
+li ul, li ol {
     margin-bottom: 0;
 }
 
@@ -151,35 +145,83 @@ a {
     transition: all .1s ease-in-out;
 }
 
-a:visited,
-a:active {
+a:visited, a:active {
     color: #00A1E6;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
     color: #00E6A1;
 }
+
+/* Component:Article */
+
+.c-article__header, .c-article__body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.c-article__header {
+    padding: 24px 24px 0;
+}
+
+.c-article__body {
+    padding: 0 24px;
+}
+
+.c-article__date {
+    font-family: 'droid serif';
+    font-weight: 100;
+}
+
+.c-article__quote{
+    background-color: #F2FAF8;
+    color: #00B37D;
+    padding:24px;
+}
+
+@media (min-width:768px) {
+    .c-article__header {
+        padding: 48px 48px 24px;
+    }
+    .c-article__body {
+        padding: 24px 48px;
+    }
+}
+
+@media (min-width:992px) {
+    .c-article__body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .c-article__author {
+        width: 25%;
+        padding-right: 24px;
+    }
+    .c-article__content {
+        width: 75%;
+    }
+}
+
+/* Component:Author */
 
 .c-author {
     display: flex;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
 }
 
-.c-author__image{
+.c-author__image {
     width: 56px;
     height: 56px;
     border-radius: 100%;
     margin-right: 16px;
 }
 
-.c-author__name,
-.c-author__meta{
+.c-author__name, .c-author__meta {
     margin-bottom: 0;
 }
 
-.c-author__meta{
+.c-author__meta {
     font-size: 14px;
     font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 24px;
@@ -187,13 +229,17 @@ a:focus {
 
 /* Small devices (landscape phones, 576px and up) */
 
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+    h1 {
+        font-size: 46px;
+    }
+}
 
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
     html {
-        padding: 48px 48px 24px;
+        /* padding: 48px 48px 24px; */
     }
     h1 {
         font-size: 58px;
@@ -217,9 +263,7 @@ a:focus {
 */
 
 @media print {
-    *,
-    *:before,
-    *:after {
+    *, *:before, *:after {
         background: transparent !important;
         color: #000 !important;
         /* Black prints faster:
@@ -227,8 +271,7 @@ a:focus {
         box-shadow: none !important;
         text-shadow: none !important;
     }
-    a,
-    a:visited {
+    a, a:visited {
         text-decoration: underline;
     }
     a[href]:after {
@@ -241,15 +284,13 @@ a:focus {
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+    a[href^="#"]:after, a[href^="javascript:"]:after {
         content: "";
     }
     pre {
         white-space: pre-wrap !important;
     }
-    pre,
-    blockquote {
+    pre, blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
@@ -260,18 +301,20 @@ a:focus {
     thead {
         display: table-header-group;
     }
-    tr,
-    img {
+    tr, img {
         page-break-inside: avoid;
     }
-    p,
-    h2,
-    h3 {
+    p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
-    h2,
-    h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
+}
+
+/* Utilitties: max width */
+
+.u-max-width-sm {
+    max-width: 36em;
 }
