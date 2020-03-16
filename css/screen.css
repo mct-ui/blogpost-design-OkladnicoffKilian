@@ -173,6 +173,10 @@ a:hover, a:focus {
     font-weight: 100;
 }
 
+.c-article__content {
+    max-width: 36em;
+}
+
 .c-article__quote{
     background-color: #F2FAF8;
     color: #00B37D;
@@ -205,7 +209,7 @@ a:hover, a:focus {
 /* Component:Author */
 
 .c-author {
-    display: flex;
+    display: block;
     align-items: center;
     margin-bottom: 48px;
 }
@@ -215,6 +219,7 @@ a:hover, a:focus {
     height: 56px;
     border-radius: 100%;
     margin-right: 16px;
+    margin-bottom: 16px;
 }
 
 .c-author__name, .c-author__meta {
@@ -317,4 +322,8 @@ a:hover, a:focus {
 
 .u-max-width-sm {
     max-width: 36em;
+}
+
+.u-margin-bottom-xs{
+    margin-bottom: 0;
 }
